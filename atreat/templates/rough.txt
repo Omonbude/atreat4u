@@ -1,0 +1,52 @@
+<<<<<<< HEAD
+def cinemas_details(request, slug):
+    detail = get_object_or_404(Cinemas, slug=slug)
+    movie = detail.cinema_name.all()
+    cinema_name = Cinemas.objects.all()
+    context = {'detail':detail, 'movie':movie, 'cinema_name':cinema_name}
+    return render(request, 'cinemas_detail.html', context)
+
+class CinemasDetail(models.Model):
+    cinema_name = models.ForeignKey(Cinemas, on_delete=models.CASCADE, related_name='cinema_name')
+    movie = models.CharField(max_length=200)
+    slug = models.SlugField()
+    image = models.ImageField()
+    rating = models.CharField(max_length=200)
+    price = models.DecimalField(max_length=50, decimal_places=2, max_digits=15) 
+    date = models.DateField()
+    time = models.CharField(max_length=10)
+    
+
+    def save(self, *args, **kwargs):
+        self.slug = self.cinema_name
+        self.slug = slugify(self.slug)
+        super (CinemasDetail, self).save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+=======
+def cinemas_details(request, slug):
+    detail = get_object_or_404(Cinemas, slug=slug)
+    movie = detail.cinema_name.all()
+    cinema_name = Cinemas.objects.all()
+    context = {'detail':detail, 'movie':movie, 'cinema_name':cinema_name}
+    return render(request, 'cinemas_detail.html', context)
+
+class CinemasDetail(models.Model):
+    cinema_name = models.ForeignKey(Cinemas, on_delete=models.CASCADE, related_name='cinema_name')
+    movie = models.CharField(max_length=200)
+    slug = models.SlugField()
+    image = models.ImageField()
+    rating = models.CharField(max_length=200)
+    price = models.DecimalField(max_length=50, decimal_places=2, max_digits=15) 
+    date = models.DateField()
+    time = models.CharField(max_length=10)
+    
+
+    def save(self, *args, **kwargs):
+        self.slug = self.cinema_name
+        self.slug = slugify(self.slug)
+        super (CinemasDetail, self).save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% url 'catalog:cinemas_details' i.slug %}

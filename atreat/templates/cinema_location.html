@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+ <style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+
+<div class="container" >
+<div class="row">
+	<div class="col-md-4">
+  <div class="card card-body"><b>Movie Treat </b></div>
+	You can send an outdoor Movie treat to your loved ones in any of these Cinemas |Click on any, the Schedule shows up, and then start booking |
+	<br>
+
+{% for i in cinema_name %}
+<a href="{% url 'catalog:cinemas_details' i.slug %}" id="hide_mobile">
+<img src="{{i.image.url}}">
+</a>
+{% endfor %}
+	</div>	
+
+	<div class="col-md-8">
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile"><b>Schedule – Booking for Reservation</b></div>
+		<h2>{{detail.name}}</h2>
+	<img src="{{current_cinema_image.url}}" alt="Chania"><br>
+
+  Location: {{curent_location}}
+  
+
+
+		<hr>
+<!-- 		Movie Schedule and Price list for Silverbird Cinema / Location Victoria Island Lagos -->
+
+    <div class="table-responsive">          
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(103, 197, 100); color: white;">
+      <tr>
+        <th>Movie</th> 
+        <th>Rating</th>
+        <th>Price</th>
+        <th>Date|time</th>
+        <th>Seat Reservation</th>
+<!--         <th>cart</th> -->
+      </tr>
+    </thead>
+    <tbody>
+
+{% for i in detail %}
+      <tr>
+        <td><img src="{{i.image.url}}" alt="Chania"><br> {{i.movie}}</td>
+        
+        <td>{{i.rating}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.date}} | {{i.time}}</td>
+
+        <td><a href="{% url 'cart:cinema_cart' i.pk %}"><button class="btn btn-primary">Add to Cart</button></a></td>
+      </tr>
+
+{% endfor %}
+
+<!--        <tr>
+        <td><img src="{% static 'img/cinema7.jpg' %}" alt="Chania"> <br> Sing</td>
+        
+        <td>Kid</td>
+        <td>800</td>
+        <td>Saturday, 4pm</td>
+        <td>4</td>
+        <td><button class="btn btn-primary">cart</button></td>
+      </tr> -->
+
+   </tbody>
+  </table>
+  <p>For mobile screen, swipe left to view full table.</p>
+  </div>
+
+
+	</div>
+</div>
+</div>
+{% endblock %}

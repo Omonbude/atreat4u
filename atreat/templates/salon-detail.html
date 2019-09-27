@@ -1,0 +1,98 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+  <div class="card card-body"><b>Beauty Treat </b></div>
+
+  You can send a Beauty Treat to your loved ones in any of these top  Beauty & Spa Salons |Click on any, the service price list shows up, and then place order
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+  <div class="well"><b>Beauty Treat </b></div>
+  
+  You can send a Beauty Treat to your loved ones in any of these top  Beauty & Spa Salons |Click on any, the service price list shows up, and then place order 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  <br>
+
+{% for i in salon_name %}
+<a href="{% url 'catalog:salons_detail' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+
+<<<<<<< HEAD
+  </div>
+
+  <div class="col-md-8">
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;"><b>Beauty Service – Place Orders for treat Package</b></div>
+
+=======
+  </div>  
+
+  <div class="col-md-8">
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Beauty Service – Place Orders for treat Package</b></div>
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+    <img src="{{salon.image.url}}" alt="Chania" width="88px" height="76px">
+    <span class="">
+      {{salon.name}}<br>
+      {{salon.venue}}
+
+    </span>
+    <hr>
+<<<<<<< HEAD
+    Beauty Service and Price list for Flourish Unisex Salon
+
+    <div class="table-responsive">
+=======
+    Beauty Service and Price list for Flourish Unisex Salon 
+
+    <div class="table-responsive">          
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(103, 197, 100); color: white;">
+      <tr>
+        <th>Beauty Service</th>
+        <th>Gender</th>
+        <th>Description</th>
+        <th>Price (N)</th>
+        <th>Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in salon_style %}
+      <tr>
+        <td><img src="{{i.image.url}}" alt="Chania" width="88px" height="76px"></td>
+        <td>{{i.gender}}</td>
+        <td>{{i.style}}</td>
+        <td>{{i.price}}</td>
+        <td><a href="{% url 'cart:salon_cart' i.pk %}"><button class="btn btn-primary">Add to cart</button></a></td>
+<<<<<<< HEAD
+
+=======
+        
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+<<<<<<< HEAD
+  <p>For mobile view, swipe left.</p>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  </div>
+
+
+
+  </div>
+</div>
+</div>
+{% endblock %}

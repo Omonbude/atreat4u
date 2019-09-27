@@ -1,0 +1,84 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container">
+<div class="row">
+	<div class="card card-body" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+	<b>	Celebrity Treat Bid</b>
+
+	</div>
+
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-12">
+			<p>
+			You can bid for any of the following special treat packages for yourself or your
+			 loved ones |Click on any star, the treat package show up, then place your bid |</p>
+
+			 <span style="color: rgb(123, 197, 26);"><h4>Nigerian Business Icon Celebrities special treats</h4></span>
+
+
+			 <div>
+
+			 {% for i in info %}
+
+			<a href="{% url 'catalog:business_details' i.id %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+			 {% endfor %}
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid"> 
+<div class="row">
+	<div class="well">
+	<span>Treat Bid</span>  <span class="pull-right">To place your bid, you have to first login | <a href="{% url 'account:login' %}">login Now</a> | 
+	 <a href="{% url 'account:register' %}"> Create Account ></a>
+	</span>
+	</div>
+</div>
+</div>
+
+<div class="row">
+
+	<div class="col-md-4">
+			<div class="">
+			You can bid for any of the following special treat packages for yourself or your<br>
+			 loved ones |Click on any star, the treat package show up, then place your bid |
+			 </div>
+			 <span style="color: rgb(123, 197, 26);"><h4>Nigerian Business Icon Celebrities special treats</h4></span>
+			 
+
+			 <div>	
+
+			 {% for i in info %}
+			 
+			<a href="{% url 'catalog:business_details' i.slug %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+			 {% endfor %}		
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+
+			 </div>
+	</div>
+
+
+<<<<<<< HEAD
+
+</div>
+=======
+	<div class="col-md-8">
+	<div class="well" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+	<b>	Celebrity Treat Bid</b>
+	</div>
+
+<!-- 	<div class="col-md-6">this is a testthis is a testthis is a testthis is a testthis is a testthis is a test</div>
+	<div class="col-md-6"> this is a test againthis is a testthis is a testthis is a testthis is a test</div> -->
+	<h3><span class="label label-default">Select Your Favourite Celebrity</span></h3>
+
+	</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</div>
+{% endblock %}

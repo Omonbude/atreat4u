@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+
+{% for i in info %}
+
+<a href="{% url 'catalog:test2' i.slug %}">{{i.name}}</a>
+{% endfor %}
+<br>
+{{detail2.name}}<br><br>
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+=======
+
+{% for i in info %}
+
+<a href="{% url 'catalog:test2' i.slug %}">{{i.name}}</a>
+{% endfor %}
+<br>
+{{detail2.name}}<br><br>
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</form>

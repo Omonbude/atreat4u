@@ -1,0 +1,88 @@
+<<<<<<< HEAD
+<!-- 1 -->
+
+<style>
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+#menu{
+	display: none;
+}
+}
+</style>
+
+
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="container">
+<div class="row"> 
+	<div class="col-md-4 col-sm-hidden col-xs-hidden">
+	 
+	<div class="card card-body col-sm-hidden col-xs-hidden"><b>Outdoor Meal Treat </b></div>
+	You can send an outdoor meal treat to your loved ones in any of these<br>
+	 fast food & restaurants|Click on any, the menu show up, and then start shopping |
+	<br>
+  {% for i in restaurant %}
+  <a href="{% url 'catalog:meal_restaurant' i.id %}">
+  <img src="{{i.image.url}}" width="88px" height="76px">
+  </a>
+{% endfor %}
+</div>	
+
+	<div class="col-md-8">
+<!-- 	<div class="">
+     Well
+</div> -->
+<div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="menu"><b>Menu – Shopping for your treat package</b></div><br>
+		  
+<!-- 		<img src="{{restaurant.image.url}}" width="88px" height="76px"> -->
+
+
+		<span class="dropdown">
+
+<h3><span class="badge badge-dark" id="menu">Select A Restaurant</span></h3>
+		</span>
+		<hr>
+
+	</div>
+</div>
+</div>
+=======
+<!-- 1 -->
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+
+<div class="container-fluid">
+<div class="row">
+	<div class="col-md-4 col-sm-hidden col-xs-hidden">
+	 
+	<div class="well col-sm-hidden col-xs-hidden"><b>Outdoor Meal Treat </b></div>
+	You can send an outdoor meal treat to your loved ones in any of these<br>
+	 fast food & restaurants|Click on any, the menu show up, and then start shopping |
+	<br>
+  {% for i in restaurant %}
+  <a href="{% url 'catalog:meal_restaurant' i.slug %}">
+  <img src="{{i.image.url}}" width="88px" height="76px">
+  </a>
+{% endfor %}
+</div>	
+
+	<div class="col-md-8">
+<div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Menu – Shopping for your treat package</b></div>
+		  
+<!-- 		<img src="{{restaurant.image.url}}" width="88px" height="76px"> -->
+
+
+		<span class="dropdown">
+
+<h3><span class="label label-default">Select A Restaurant</span></h3>
+		</span>
+		<hr>
+
+	</div>
+</div>
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

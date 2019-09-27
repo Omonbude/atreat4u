@@ -1,0 +1,233 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <span class="">
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bude's Code</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+        <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+        <!-- Font Awesome Icon -->
+<!--         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+       <link type="text/css" rel="stylesheet" href="css.css"/>
+        </head>
+        <body>  -->
+
+
+<!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script> -->
+
+<div class="container">
+    <div class="row">
+<h2>Your Shopping Cart
+            <span class="badge pull-right">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+                    {% if cart|length > 0 %}
+                        My Shopping Order:
+                        <a href=" style="color: #ffffff">
+                            {{ totail_items }} item {{ totail_items|pluralize }}, Kshs. {{ cart.get_total_price }}
+                        </a>
+                        {% else %}
+
+                       Total items are {{total_items}}<br>
+
+<<<<<<< HEAD
+                      Total price is {{total_price}}<br>
+
+                    {% endif %}
+
+            </span>
+
+
+
+
+=======
+                      Total price in meal is {{total_price}}<br>
+
+                    {% endif %}
+ 
+            </span>
+        </h2>
+        <div class="col-md-6 col-sm-offset-3">
+        
+        
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+            <!-- CREDIT CARD FORM STARTS HERE -->
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+<<<<<<< HEAD
+                        <div class="display-td" >
+                            <img class="img-responsive pull-right" src="{% static 'home/images/pa.png' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="{% url 'cart:checkout' %}">{% csrf_token %}
+=======
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="{% static 'img/pa.png' %}">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+<<<<<<< HEAD
+                                        <input
+=======
+                                        <input 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+<<<<<<< HEAD
+                                            required autofocus
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+=======
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+<<<<<<< HEAD
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required
+=======
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+<<<<<<< HEAD
+                                    <input
+                                        type="tel"
+=======
+                                    <input 
+                                        type="tel" 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+<<<<<<< HEAD
+                        <!--<div class="row">-->
+                        <!--    <div class="col-xs-12">-->
+                        <!--        <div class="form-group">-->
+                        <!--            <label for="couponCode">COUPON CODE</label>-->
+                        <!--            <input type="text" class="form-control" name="couponCode" />-->
+                        <!--        </div>-->
+                        <!--    </div>                        -->
+                        <!--</div>-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="submit">Pay</button>
+=======
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponCode">COUPON CODE</label>
+                                    <input type="text" class="form-control" name="couponCode" />
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Start Subscription</button>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+<<<<<<< HEAD
+            </div>
+            <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+        </div>
+
+
+    </div>
+</div>
+
+=======
+            </div>            
+            <!-- CREDIT CARD FORM ENDS HERE -->
+            
+            
+        </div>            
+
+        
+    </div>
+</div>
+<!-- <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/nouislider.min.js' %}"></script>
+        <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script></body></html> -->
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

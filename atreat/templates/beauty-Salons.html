@@ -1,0 +1,68 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+  <div class="card card-body"><b>Beauty Treat </b></div>
+  
+You can send a Beauty Treat to your loved ones in any of these top  Beauty & Spa Salons |Click on any, the service price list shows up, and then place order 
+  <br>
+ 
+{% for i in salon_name %}
+<a href="{% url 'catalog:salons_detail' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+
+  </div>  
+
+  <div class="col-md-8">
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;"><b>Beauty Service – Place Orders for treat Package</b></div>
+    
+    
+    <hr>
+    <h3><span class="label label-default">Select A Beauty Salon</span></h3>
+
+
+
+
+  </div>
+</div>
+</div>
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+  <div class="well"><b>Beauty Treat </b></div>
+  
+You can send a Beauty Treat to your loved ones in any of these top  Beauty & Spa Salons |Click on any, the service price list shows up, and then place order 
+  <br>
+ 
+{% for i in salon_name %}
+<a href="{% url 'catalog:salons_detail' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+
+  </div>  
+
+  <div class="col-md-8">
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Beauty Service – Place Orders for treat Package</b></div>
+    
+    
+    <hr>
+    <h3><span class="label label-default">Select A Beauty Salon</span></h3>
+
+
+
+
+  </div>
+</div>
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

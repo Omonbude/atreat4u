@@ -1,0 +1,568 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+=======
+{% extends 'base.html' %}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% block title %}
+    Your Shopping Cart
+{% endblock %}
+{% load staticfiles %}
+<<<<<<< HEAD
+{% block body %}
+
+
+<div class="container">
+<div class="col-12">
+<div class="row">
+
+
+    <p>Your Shopping Cart
+    <br>
+            <span class="">
+=======
+{% block meal %}
+<div class="container">
+<div class="col-sm-12">
+<div class="row">
+<h2>Your Shopping Cart
+            <span class="badge pull-right">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+                    {% if cart|length > 0 %}
+                        My Shopping Order:
+                        <a href=" style="color: #ffffff">
+                            {{ totail_items }} item {{ totail_items|pluralize }}, Kshs. {{ cart.get_total_price }}
+                        </a>
+                        {% else %}
+
+<<<<<<< HEAD
+                       Total : {{total_items}}<br>
+
+                      Price : {{total_price}} <br>
+                      flat charge: N100<br>
+                      <span style="color: green;">Total price :{{flat_charge}}</span> <br>
+                      <span style="color: red; margin-top: 23px;"><b>A flat charge of N100 will be added for services.</b></span>
+
+                    {% endif %}
+
+            </span>
+        </p>
+
+
+
+
+
+
+
+
+
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
+          <th>Remove</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+
+        {% if meal_total %}
+ {% for i in meal_total %}
+        <td>
+
+        <b>Meal:</b> {{i.Menu}}<br>
+        <b>Restaurant:</b> {{i.real_restaurant}} <br>
+        <b>Location:</b> {{i.location}} <br>
+
+=======
+                       Total items are {{total_items}}<br>
+
+                      Total price in meal is {{total_price}}<br>
+
+                    {% endif %}
+ 
+            </span>
+        </h2>
+
+<div>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+      <tr>
+        <th>Item</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+
+
+{% if meal_total %}
+ {% for i in meal_total %}
+        <tbody style="padding-bottom: 10px;">   
+        <td colspan="">
+        <b>Meal:</b> {{i.Menu}}<br>
+        <b>Restaurant:</b> {{i.real_restaurant}} <br>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <b>Brand:</b> {{i.Brand}} <br>
+        <b>Size:</b> {{i.Size}} <br>
+        <b>Quantity:</b> {{i.quantity}} <br>
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.price}}</td>
+        <td>#{{i.Total_price}}</td>
+<<<<<<< HEAD
+        <td><a href="{% url 'cart:delete_mealcart' i.id %}">Remove</a></td>
+        </tbody>
+
+=======
+        <td><a href="{% url 'cart:delete_mealcart' i.pk %}">Remove</a></td>
+        </tbody>
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+<<<<<<< HEAD
+{% if cinema_total %}
+ {% for i in cinema_total %}
+
+        <td colspan="">
+        <b>MOVIE:</b> {{i.movie}}<br>
+        <b>CINEMA:</b> {{i.cinema_name}} <br>
+        <b>LOCATION:</b> {{i.location}} <br>
+        <b>RATING:</b> {{i.rating}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.price}}</td>
+        <td>#{{i.price}}</td>
+        <td><a href="{% url 'cart:delete_cinemascart' i.pk %}">Remove</a></td>
+        </tbody>
+
+=======
+
+{% if cinema_total %}
+ {% for i in cinema_total %}
+        <tbody style="padding-bottom: 10px;">   
+        <td colspan="2">
+        <b>MOVIE:</b> {{i.movie}}<br>
+        <b>CINEMA:</b> {{i.cinema_name}} <br>
+        <b>RATING:</b> {{i.rating}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+         
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.price}}</td>
+        <td><a href="{% url 'cart:delete_cinemascart' i.pk %}">Remove</a></td>
+        </tbody>
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+<<<<<<< HEAD
+{% if salon_total %}
+ {% for i in salon_total %}
+        <tbody style="padding-bottom: 10px;">
+=======
+
+
+
+{% if salon_total %}
+ {% for i in salon_total %}
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="2">
+        <b>STYLE:</b> {{i.style}}<br>
+        <b>SALON:</b> {{i.name}} <br>
+        <b>GENDER:</b> {{i.gender}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.price}}</td>
+        <td><a href="{% url 'cart:delete_salon_cart' i.pk %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+
+
+{% if single_total %}
+<<<<<<< HEAD
+ {% for i in single_total %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in single_total %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="">
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+<<<<<<< HEAD
+
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.singles_price}}</td>
+
+        <td> #{{i.singles_price}}</td>
+
+        <td><a href="{% url 'cart:delete_comedy_singlecart' i.pk %}">Remove</a></td>
+        </tbody>
+
+=======
+         
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.singles_price}}</td>
+        <td>#{{i.singles_price}}</td>
+        <td><a href="{% url 'cart:delete_comedy_singlecart' i.pk %}">Remove</a></td>
+        </tbody>
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+<<<<<<< HEAD
+{% if double_total %}
+ {% for i in double_total %}
+        <tbody style="padding-bottom: 10px;">
+=======
+
+{% if double_total %}
+ {% for i in double_total %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="">
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.double_price}}</td>
+        <td>#{{i.double_price}}</td>
+        <td><a href="{% url 'cart:delete_comedy_doublecart' i.pk %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+
+{% if round_total %}
+<<<<<<< HEAD
+ {% for i in round_total %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in round_total %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="">
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.round_table_price}}</td>
+        <td>#{{i.round_table_price}}</td>
+        <td><a href="{% url 'cart:delete_comedy_round_tablecart' i.pk %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+<<<<<<< HEAD
+{% if vip_total %}
+ {% for i in vip_total %}
+        <tbody style="padding-bottom: 10px;">
+=======
+
+
+
+{% if vip_total %}
+ {% for i in vip_total %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="">
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.vip_table_price}}</td>
+        <td>#{{i.vip_table_price}}</td>
+        <td><a href="{% url 'cart:delete_comedy_vip_tablecart' i.pk %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+{% if celeb %}
+<<<<<<< HEAD
+ {% for i in celeb %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in celeb %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="2">
+        <b>CATEGORY :</b>MOVIE CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+   <!--      <b>AMOUNT:</b> #{{i.amount}} <br> -->
+<!--         <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br> -->
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.amount}}</td>
+        <td><a href="{% url 'catalog:delete_celeb' i.id %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+
+{% if music %}
+<<<<<<< HEAD
+ {% for i in music %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in music %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="2">
+        <b>CATEGORY :</b>MUSIC CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+<!--         <b>AMOUNT:</b> #{{i.amount}} <br> -->
+<!--         <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br> -->
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.amount}}</td>
+        <td><a href="{% url 'catalog:delete_music' i.id %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+
+{% if business %}
+<<<<<<< HEAD
+ {% for i in business %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in business %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="2">
+        <b>CATEGORY :</b>BUSINESS CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+<!--         <b>AMOUNT:</b> #{{i.amount}} <br> -->
+<!--         <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br> -->
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.amount}}</td>
+        <td><a href="{% url 'catalog:delete_business' i.id %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endfor %}
+{% endif %}
+
+
+
+
+
+
+{% if tv %}
+<<<<<<< HEAD
+ {% for i in tv %}
+        <tbody style="padding-bottom: 10px;">
+=======
+ {% for i in tv %}  
+        <tbody style="padding-bottom: 10px;">   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td colspan="2">
+        <b>CATEGORY :</b>TV HOST CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+<!--         <b>AMOUNT:</b> #{{i.amount}} <br> -->
+<!--         <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br> -->
+        <br>
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<!--          <img src="{{i.image.url}}" width="100px;" height="100px;"> -->
+        </td>
+        <td>#{{i.amount}}</td>
+        <td><a href="{% url 'catalog:delete_tvhost' i.id %}">Remove</a></td>
+        </tbody>
+<<<<<<< HEAD
+
+{% endfor %}
+{% endif %}
+
+<tr style="font-size:20px;"><td><b>Total</b></td><td></td>
+ <td></td>
+ <td><b>{{flat_charge}}</b></td>
+
+</tr>
+
+
+
+
+
+      </tbody>
+    </table>
+    <p><b>For mobile phones, swipe left to see full table.</b></p>
+              <p class="text-right">
+            <a href="{% url 'catalog:index' %}" class="btn btn-success">Continue Shopping</a>
+            <a href="{% url 'order:payment' %}" class="btn btn-primary">Checkout</a>
+        </p>
+
+
+</div>
+
+</div>
+</div>
+</div>
+  {% endblock %}
+=======
+    
+{% endfor %}
+{% endif %}
+
+
+
+<tr style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+                    <td><b>Total</b></td>
+                    <td></td>
+ <td></td>
+ <td><b>{{total_price}}</b></td>
+ 
+                </tr>
+  </table><hr><br>
+  </div>
+        <p class="text-right">
+            <a href="{% url 'catalog:index' %}" class="btn btn-default">Continue Shopping</a>
+            <a href="{% url 'order:index' %}" class="btn btn-primary">Checkout</a>
+        </p>
+</div>
+
+
+  </div>
+  </div>
+  </div>
+  {% endblock %} 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<style>
+  /*body {*/
+  /*    background-color: #1abc9c;*/
+  /*    color: #ffffff;*/
+  /*}*/
+ </style>
+
+
+
+<div class="container-fluid bg-1 text-center">
+<div class="row">
+
+<div class="col-sm-12">
+  <h3>User Profile</h3>
+  <!--<img src="{{image.url}}" class="img-circle" alt="Image" width="350" height="350">-->
+
+  <h4>Username: {{username}} </h4>
+	<h4>First Name:{{first_name}} </h4>
+<h4>Last Name:{{last_name}} </h4>
+<h4>Phone Number:{{phone_number}} </h4>
+<a href="{% url 'account:edit_profile' %}"> <button class="btn btn-primary">Edit Profile</button></a>
+</div>
+</div>
+</div>
+<!-- Image: <img > <br>
+Username: {{username}} <br>
+First Name:{{first_name}} <br>
+Last Name:{{last_name}} <br>
+Email:{{email}} <br> -->
+
+{% endblock %}

@@ -1,0 +1,166 @@
+<<<<<<< HEAD
+<!-- 3 -->
+
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+
+  <div class="card card-body"><b>Outdoor Meal Treat </b></div>
+  You can send an outdoor meal treat to your loved ones in any of these<br>
+   fast food & restaurants|Click on any, the menu show up, and then start shopping |
+  <br>
+
+  {% for i in restaurant_name %}
+<a href="{% url 'catalog:meal_restaurant' i.id %}">
+<img src="{{i.image.url}}" width="88px" height="76px" id='hide_mobile' style='padding:3px;'>
+</a>
+{% endfor %}
+</div>
+
+  <div class="col-md-8">
+<div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile"><b>Menu – Shopping for your treat package</b></div>
+  <hr>
+  <img src="{{current_restaurant_image.url}}" alt="restaurant image"><br>
+    Menu and Price list for {{current_restaurant}} / Location {{cname}} <br>
+
+    <span style='color:rgb(123, 197, 26);'>select the checkbox for your favourite meal and add to cart</span>
+
+
+
+
+
+
+  <div class="table-responsive">
+  <form action="{% url 'cart:add_meal_cart' %}" method="POST">{% csrf_token %}
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(103, 197, 100); color: black;">
+      <tr>
+
+        <!-- <th>Select</th> -->
+        <th>Menu</th>
+        <th>Brand</th>
+        <th>Size</th>
+        <!--<th>Qty |Unit |Plate</th>-->
+        <th>Amount (N)</th>
+<!--         <th>Add to cart ></th> -->
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in meal %}
+
+      <tr>
+        <!-- <td> -->
+        <!-- <input type="checkbox" name="meal" value="m{{i.Menu}}m b{{i.Brand}}b s{{i.Size}}s a{{i.Amount}}a"> -->
+
+     <!--    <div class="checkbox"><label><input type="checkbox" name="" value="">testing checkbox</label></div>
+        </td> -->
+
+        <td><div class="checkbox"><label><input type="checkbox" name="meal" value="startmeal{{i.Menu}}endmeal startbrand{{i.Brand}}endbrand startsize{{i.Size}}endsize startamount{{i.Amount}}endamount startrestaurant{{current_restaurant}}endrestaurant startlocation{{cname}}endlocation">{{i.Menu}} </label></div>
+        </td>
+        <td>{{i.Brand}}</td>
+        <td>{{i.Size}}</td>
+        <!--<td><input type="text" name="detail" placeholder="1" value="1"> </td>-->
+        <td>{{i.Amount}}</td>
+      </tr>
+
+  {% endfor %}
+
+    </tbody>
+
+  </table>
+ <input type="submit" value="Add to cart" class="btn btn-success"><br>
+ <p>For mobile screens, swipe left to see full table.</p>
+</form>
+  </div>
+
+
+
+  </div>
+</div>
+</div>
+=======
+<!-- 3 -->
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+
+<div class="container-fluid">
+<div class="row">
+	<div class="col-md-4">
+	 
+	<div class="well"><b>Outdoor Meal Treat </b></div>
+	You can send an outdoor meal treat to your loved ones in any of these<br>
+	 fast food & restaurants|Click on any, the menu show up, and then start shopping |
+	<br>
+
+  {% for i in restaurant_name %}
+<a href="{% url 'catalog:meal_restaurant' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+</div>	
+
+	<div class="col-md-8">
+<div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Menu – Shopping for your treat package</b></div>
+	<hr>
+		Menu and Price list for Chicken Republic / Location No 9 Bus-stop Road, Ikeja; Lagos
+
+
+
+
+
+
+  <div class="table-responsive">          
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(103, 197, 100); color: black;">
+      <tr>
+        <th>Menu</th>
+        <th>Brand</th>
+        <th>Size</th>
+        <th>Qty |Unit |Plate</th>
+        <th>Amount (N)</th>
+<!--         <th>Add to cart ></th> -->
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in meal %}
+      <tr>
+        <td>{{i.Menu}}</td>
+        <td>{{i.Brand}}</td>
+        <td>{{i.Size}}</td>
+        <td><form action="{% url 'catalog:add_meal_cart' i.id %}" method="POST">{% csrf_token %}
+                <input type="text" name="detail" placeholder="1" value="1">
+                <input type="submit" value="Add to cart" class="btn btn-success">
+            
+           
+        </td>
+        <td>{{i.Amount}}</td>
+<!--         <td><a href="{% url 'cart:my_cart' i.pk %}"><button class="btn btn-success" type="submit" >Add to cart</button></a></td> -->
+      </tr>
+      </form>
+  {% endfor %}
+    </tbody>
+  </table>
+
+  
+  </div>
+
+
+
+	</div>
+</div>
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

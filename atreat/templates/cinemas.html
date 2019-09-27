@@ -1,0 +1,78 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+ <style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+
+<div class="container" >
+<div class="row">
+  <div class="col-md-4">
+  <div class="card card-body"><b>Movie Treat </b></div>
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+
+<div class="container-fluid" >
+<div class="row">
+  <div class="col-md-4">
+  <div class="well"><b>Movie Treat </b></div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  You can send an outdoor Movie treat to your loved ones in any of these Cinemas |Click on any, the Schedule shows up, and then start booking |
+  <br>
+
+ {% for i in cinema_name %}
+ <a href="{% url 'catalog:cinemas_details' i.slug %}"><img src="{{i.image.url}}" alt="Chania" width="88px" height="76px"></a>
+
+<<<<<<< HEAD
+{% endfor %}
+
+
+  </div>
+
+  <div class="col-md-8">
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile"><b>Schedule – Booking for Reservation</b></div>
+  <h3><span class="label label-default" id="hide_mobile">Select A Cinema</span></h3>
+
+
+<!--        <tr>
+        <td><img src="{% static 'img/cinema7.jpg' %}" alt="Chania"> <br> Sing</td>
+
+=======
+{% endfor %} 
+
+
+  </div>  
+
+  <div class="col-md-8">
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Schedule – Booking for Reservation</b></div>
+  <h3><span class="label label-default">Select A Cinema</span></h3>
+  
+  
+<!--        <tr>
+        <td><img src="{% static 'img/cinema7.jpg' %}" alt="Chania"> <br> Sing</td>
+        
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td>Kid</td>
+        <td>800</td>
+        <td>Saturday, 4pm</td>
+        <td>4</td>
+        <td><button class="btn btn-primary">cart</button></td>
+      </tr> -->
+
+   </tbody>
+  </table>
+  </div>
+
+
+  </div>
+</div>
+</div>
+{% endblock %}

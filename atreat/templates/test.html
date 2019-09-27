@@ -1,0 +1,256 @@
+<<<<<<< HEAD
+{% extends 'base.html' %}
+<!-- {% load crispy_forms_tags %}
+<form method="POST">
+	{% csrf_token %}
+	{{form|crispy}}
+	{{OK}}
+	<button type="submit" class="btn btn-primary ">Submit Bid</button>
+</form>	
+{{detail.amount}} --> 
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+	<div class="well">
+	<span>Treat Bid</span>  <span class="pull-right">To place your bid, you have to first login | <a href="{% url 'account:login' %}">login Now</a> | 
+	 <a href="{% url 'account:register' %}"> Create Account ></a>
+	</span>
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-4">
+			<div class="">
+			You can bid for any of the following special treat packages for yourself or your<br>
+			 loved ones |Click on any star, the treat package show up, then place your bid |
+			 </div>
+			 <span style="color: rgb(123, 197, 26);"><h4>Nollywood Celebrities special treats</h4></span>
+			 
+
+			 <div>	
+
+			 {% for i in info %}
+			 
+			<a href="{% url 'catalog:_details' i.slug %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+			 {% endfor %}		
+
+
+			 </div>
+	</div>
+
+
+	<div class="col-md-8">
+	<div class="well" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+	<b>	Celebrity Treat Bid</b>
+	</div>
+
+	<div class="col-md-6">
+		<div class="col-md-6">
+<video controls width="500" height="260">
+<source src="{{detail2.movie.url}}" type="video/mp4">
+
+</video>
+</div>	
+	</div>
+	<div class="col-md-6"> 
+		<span style="background-color: rgb(123, 197, 26); color: white; font-size:20px;"><b>|Treat Description |</b></span><br>
+			This Nollywood Icon and sensation is giving away atreat4u to host five of her fans
+			to have a special dinner at her home on this Feb 13th eve of Valentine, Bidding 
+			for this treat is ongoing!<br>
+			<b>{{detail2.name}}</b> <br>
+			<img src="{{detail2.image.url}}">
+
+	</div>
+
+	<div class="col-md-12">
+		<h4>Bidding Starts |1st Feb- 12:00pm| Bidding Closes   |10th Feb -12:00pm|</h4>
+		<br>
+		
+		<h2>Place your Bid</h2>
+		<br>
+		Starting bid is put at [N5, 000:00]Highest Bid so far [N60, 000:00]
+		<br>
+		<br>
+		<div class="col-xs-2">
+
+{{result}}
+
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+</form>	
+
+		</div>
+		</div>
+
+		<br>
+
+
+
+
+	
+	<div class="col-md-12">
+		<h1>Bid Policy</h1>
+			<h4><ul>
+
+			<li>To participate for actual bidding you must be 18 years and above.</li>
+			<li>You can bid to win and give it as a treat to someone special, this include family, friends and loved ones of the appropriate age suitable for the treat package.</li>
+			<li>90% of the winning Bid(s) shall be donated to the favorite charity of the Celebrity that donated the treat for this auction</li>
+
+			</ul></h4>
+
+			<hr>
+			<h3>Winning Bid Donation</h3>
+		<div class="col-md-6">
+			
+			<img src="{{detail2.charity_image.url}}">
+		</div>		
+		<div class="col-md-6">
+			<h4>{{detail2.name}} is donating the winning bid for this treat to her favorite charity –{{detail2.charity_name}}</h4>
+		</div>
+
+	</div>	
+	
+			
+		
+	</div>
+</div>
+
+
+
+</div>
+=======
+{% extends 'base.html' %}
+<!-- {% load crispy_forms_tags %}
+<form method="POST">
+	{% csrf_token %}
+	{{form|crispy}}
+	{{OK}}
+	<button type="submit" class="btn btn-primary ">Submit Bid</button>
+</form>	
+{{detail.amount}} --> 
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+	<div class="well">
+	<span>Treat Bid</span>  <span class="pull-right">To place your bid, you have to first login | <a href="{% url 'account:login' %}">login Now</a> | 
+	 <a href="{% url 'account:register' %}"> Create Account ></a>
+	</span>
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-4">
+			<div class="">
+			You can bid for any of the following special treat packages for yourself or your<br>
+			 loved ones |Click on any star, the treat package show up, then place your bid |
+			 </div>
+			 <span style="color: rgb(123, 197, 26);"><h4>Nollywood Celebrities special treats</h4></span>
+			 
+
+			 <div>	
+
+			 {% for i in info %}
+			 
+			<a href="{% url 'catalog:_details' i.slug %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+			 {% endfor %}		
+
+
+			 </div>
+	</div>
+
+
+	<div class="col-md-8">
+	<div class="well" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+	<b>	Celebrity Treat Bid</b>
+	</div>
+
+	<div class="col-md-6">
+		<div class="col-md-6">
+<video controls width="500" height="260">
+<source src="{{detail2.movie.url}}" type="video/mp4">
+
+</video>
+</div>	
+	</div>
+	<div class="col-md-6"> 
+		<span style="background-color: rgb(123, 197, 26); color: white; font-size:20px;"><b>|Treat Description |</b></span><br>
+			This Nollywood Icon and sensation is giving away atreat4u to host five of her fans
+			to have a special dinner at her home on this Feb 13th eve of Valentine, Bidding 
+			for this treat is ongoing!<br>
+			<b>{{detail2.name}}</b> <br>
+			<img src="{{detail2.image.url}}">
+
+	</div>
+
+	<div class="col-md-12">
+		<h4>Bidding Starts |1st Feb- 12:00pm| Bidding Closes   |10th Feb -12:00pm|</h4>
+		<br>
+		
+		<h2>Place your Bid</h2>
+		<br>
+		Starting bid is put at [N5, 000:00]Highest Bid so far [N60, 000:00]
+		<br>
+		<br>
+		<div class="col-xs-2">
+
+{{result}}
+
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+</form>	
+
+		</div>
+		</div>
+
+		<br>
+
+
+
+
+	
+	<div class="col-md-12">
+		<h1>Bid Policy</h1>
+			<h4><ul>
+
+			<li>To participate for actual bidding you must be 18 years and above.</li>
+			<li>You can bid to win and give it as a treat to someone special, this include family, friends and loved ones of the appropriate age suitable for the treat package.</li>
+			<li>90% of the winning Bid(s) shall be donated to the favorite charity of the Celebrity that donated the treat for this auction</li>
+
+			</ul></h4>
+
+			<hr>
+			<h3>Winning Bid Donation</h3>
+		<div class="col-md-6">
+			
+			<img src="{{detail2.charity_image.url}}">
+		</div>		
+		<div class="col-md-6">
+			<h4>{{detail2.name}} is donating the winning bid for this treat to her favorite charity –{{detail2.charity_name}}</h4>
+		</div>
+
+	</div>	
+	
+			
+		
+	</div>
+</div>
+
+
+
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}</div>

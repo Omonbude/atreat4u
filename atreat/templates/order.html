@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="container-fluid">
+<div class="col-sm-6 offset-md-3">
+
+=======
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+
+
+{% block body %}
+<div class="container-fluid">
+<div class="col-sm-6 col-sm-offset-3">
+	
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+<p style="color: rgb(123, 197, 26);">Please I wish to send this treat package to the following person:</p>
+<form method="post">
+	{% csrf_token %}
+	{{form|crispy}}
+
+
+<<<<<<< HEAD
+	<button type="submit" class="btn btn-primary ">Submit</button>
+</form>
+=======
+	<button type="submit" class="btn btn-primary ">Submit</button> 
+</form>	
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</div></div>
+{% endblock %}

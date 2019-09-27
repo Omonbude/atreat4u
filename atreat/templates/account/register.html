@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class='container'>
+<div class="row">
+<div class="col-md-6 offset-md-3">
+
+
+<h1>{{msg}}</h1>
+<form method="post" enctype="multipart/form-data" action="{% url 'account:register' %}">{% csrf_token %}
+=======
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block form %}
+
+<!-- <h1>hi this is the registration page</h1> -->
+
+
+<h1>{{msg}}</h1>
+<form method="post" action="{% url 'account:register' %}">{% csrf_token %}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{{form|crispy}}
+<input class="btn btn-primary" type="submit" value="Register" name="">
+
+
+</form>
+
+<<<<<<< HEAD
+
+</div>
+</div>
+</div>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

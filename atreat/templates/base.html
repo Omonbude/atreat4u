@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>{% block title %}Atreat4u{% endblock %}</title>
+<<<<<<< HEAD
+
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'home/images/fav.JPG' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+=======
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}"/>
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'img/logo/fav.jpg' %}">
+	
+
+
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+
+
+
+{% block style %}
+    <style>
+<<<<<<< HEAD
+     .fa {
+    font-size: 2em;
+/*    width: 2em;
+    height: 1.5em;
+    text-align: center;*/
+  }
+
+	.fa.fa-facebook-official {
+    color: #3b5998;
+    margin-left: -10px;
+}
+	.fa.fa-twitter-square {
+    color: #55acee;
+}
+
+    ul#menu li {
+    display:inline;
+    }
+
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      #atreat{
+        color: red;
+        font-size:45px;
+        font-family: cursive;"
+      }
+
+<<<<<<< HEAD
+
+=======
+      .login{
+/*        background-color: red;*/
+        background-image: url("{% static 'img/pink-background.jpg' %}");
+        }
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        #size{
+          font-size: 20px;
+        }
+
+      #color-orange{
+        color: rgb(227, 108, 10); font-size:20px;
+      }
+
+
+/*      div.img {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+      }
+
+      div.img:hover {
+      border: 1px solid #777;
+      }
+
+      div.img img {
+      width: 100%;
+      height: auto;
+      }
+
+      div.desc {
+      padding: 15px;
+      text-align: center;
+      }*/
+
+<<<<<<< HEAD
+body {
+  margin-top: 80px;
+}
+=======
+
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+
+
+    </style>
+<<<<<<< HEAD
+{% endblock %}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+=======
+{% endblock %}		
+
+<nav class="navbar navbar-inverse">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+<<<<<<< HEAD
+        <span class="icon-bar"></span>
+=======
+        <span class="icon-bar"></span> 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      </button>
+      <a class="navbar-brand" href="{% url 'catalog:index' %}">
+      <img alt="Brand" src="{% static 'img/logo/logo.png' %}" id="logo" style="margin-top: -25px; margin-left: -15px;">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav navbar-right">
+<li class="active"><a href="{% url 'catalog:index' %}">Home</a></li>
+         <li><a href="{% url 'catalog:about' %}">About Us</a></li>
+         <li><a href="{% url 'catalog:contact' %}">Contact Us</a></li>
+<<<<<<< HEAD
+        <li><a href="{% url 'cart:myproducts' %}">My Products</a></li>
+        <li><a href="{% url 'cart:view_cart' %}"><i class="fa fa-logout"></i> Cart</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'account:register' %}">Sign Up</a></li>
+         <li><a href="{% url 'account:logout' %}">Logout</a></li>
+
+        {% else %}
+          <li><a href="{% url 'account:register' %}">Sign Up</a></li>
+          <li><a href="{% url 'account:login' %}"> Login</a></li>
+
+            {% endif %}
+            <li><a href="{% url 'account:profile' %}">Profile</a></li>
+           <li><a href="{% url 'account:change_password' %}">Forget Password</a></li>
+        </ul>
+      </li>
+=======
+         {% if request.user.is_authenticated %}
+        <li><a href="{% url 'account:register' %}">Sign Up</a></li>
+         <li><a href="{% url 'account:logout' %}">Logout</a></li>
+        <li><a href="{% url 'cart:view_cart' %}">Cart</a></li>
+        {% else %}
+          <li><a href="{% url 'account:register' %}">Sign Up</a></li>  
+          <li><a href="{% url 'account:login' %}"> Login</a></li>
+          <li><a href="{% url 'cart:view_cart' %}"><i class="fa fa-logout"></i> Cart</a></li>
+            {% endif %} 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      </ul>
+    </div>
+  </div>
+</nav>
+</head>
+<<<<<<< HEAD
+
+=======
+<body>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+
+
+
+{% block body %}
+<<<<<<< HEAD
+<body>
+</body>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}
+
+
+<div class="login">
+{% block login %}
+<<<<<<< HEAD
+<body>
+</body>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}
+</div>
+
+{% block meal %}
+<<<<<<< HEAD
+<body>
+</body>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}
+
+
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-offset-3">
+{% block form %}
+<<<<<<< HEAD
+<body>
+</body>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock form %}
+</div>
+</div>
+</div>
+
+
+
+    <footer id="footer" style="background-color: rgb(34, 34, 34); color: white; margin-top: 80px;">
+<<<<<<< HEAD
+
+        <div class="container-fluid">
+          <!-- row -->
+          <div class="row">
+            <div class="col-md-6 col-xs-6">
+              <div class="" style="text-align: left;">
+                <h3 class="" style="color: white;">About Us</h3>
+                <p>we make sales of goods and services easier </p>
+                <ul class="">
+
+                  <li><a href="#"><i class="fa fa-phone"></i>+2348033446523</a></li>
+                  <li><a href="#"><i class="fa fa-envelope-o"></i>richardowota@gmail.com</a></li>
+                <li style="margin-left: 10px;">
+
+                        <a href="https://www.facebook.com/Atreat4u-988141281389094/"><i class="fa fa-facebook-official" style='background-color:#222'></i></a>
+                        <i class="fa fa-twitter-square"></i>
+
+
+                </li>
+=======
+ 
+        <div class="container-fluid">
+          <!-- row -->
+          <div class="row">
+            <div class="col-md-4 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">About Us</h3>
+                <p>we make sales of goods and services easier </p>
+                <ul class="footer-links">
+                  
+                  <li><a href="#"><i class="fa fa-phone"></i>+2348033446523</a></li>
+                  <li><a href="#"><i class="fa fa-envelope-o"></i>richardowota@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">Categories</h3>
+                <ul class="footer-links">
+                  <li><a href="{% url 'catalog:meal' %}">Outdoor Meals</a></li>
+                  <li><a href="{% url 'catalog:comedy' %}">Comedy Events</a></li>
+                  <li><a href="{% url 'catalog:cinemas' %}">Cinemas</a></li>
+                  <li><a href="{% url 'catalog:salons' %}">Beauty Salons</a></li>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                </ul>
+              </div>
+            </div>
+
+<<<<<<< HEAD
+
+            <div class="col-md-6 col-xs-6">
+              <div class="footer">
+                <h3 class="" style="color: white;">Information</h3>
+                <ul class="">
+=======
+            <div class="clearfix visible-xs"></div>
+
+            <div class="col-md-4 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">Information</h3>
+                <ul class="footer-links">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+                  <li><a href="{% url 'catalog:contact' %}">Contact Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /container -->
+
+
+      <!-- bottom footer -->
+      <div id="bottom-footer" class="section">
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+            <div class="col-md-12 text-center">
+<<<<<<< HEAD
+
+              <span class="copyright">
+
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Designed By The Budescode
+=======
+            
+              <span class="copyright">
+
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+              </span>
+            </div>
+          </div>
+
+        </div>
+<<<<<<< HEAD
+
+=======
+   
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</div>
+    </footer>
+
+
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<<<<<<< HEAD
+
+
+
+
+
+
+=======
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/nouislider.min.js' %}"></script>
+    <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</html>
+

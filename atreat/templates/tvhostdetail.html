@@ -1,0 +1,372 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block title %}Naija TV Host Celebrities special treats{% endblock %}
+
+{% block body %}
+
+<style>
+ .fa {
+    font-size: 2em;
+/*    width: 2em;
+    height: 1.5em;
+    text-align: center;*/
+  }
+
+	.fa.fa-facebook-official {
+    color: #3b5998;
+    margin-left: -10px;
+}
+	.fa.fa-twitter-square {
+    color: #55acee;
+}
+
+	#id_amount{
+		width: 230px;
+	}
+body{
+	padding: 0px;
+}
+@media only screen and (max-width: 768px) {
+/*	for mobile*/
+	#bidstart{
+		font-size: 15px;
+	}
+	#hide_mobile{
+		display: none;
+	}
+	#hide_desktop{
+  	display: none;
+  }
+    #mobile_hide{
+      display:none;
+  }
+    }
+
+
+@media only screen and (min-width: 600px) {
+/*	for tablet*/
+  #hide_desktop{
+  	display: none;
+  }
+  #desktop_hide{
+      display:none;
+  }
+    }
+
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+  #hide_desktop{
+  	display: none;
+  }
+  #desktop_hide{
+      display:none;
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+
+<div class="container-fluid">
+
+
+
+<div class="row">
+
+<div class="col-md-4">
+<!-- 	<div class="">
+	You can bid for any of the following special treat packages for yourself or your<br>
+	 loved ones |Click on any star, the treat package show up, then place your bid |
+	 </div> -->
+	 <span style="color: rgb(123, 197, 26);"><h4>Naija TV Host Celebrities special treats</h4></span>
+
+
+	 <div id="hide_mobile">
+
+	 {% for i in info %}
+
+	<a href="{% url 'catalog:tvhost_details' i.id %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+	 {% endfor %}
+	 </div>
+</div>
+
+
+	<div class="col-md-8">
+	<div class="card card-body" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+=======
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+	<div class="well">
+	<span>Treat Bid</span>  
+	{% if user.is_authenticated %}
+	{% else %}
+	<span class="pull-right">To place your bid, you have to first login | <a href="{% url 'account:login' %}">login Now</a> | 
+	 <a href="{% url 'account:register' %}"> Create Account ></a>
+	</span>
+	{% endif %}
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-4">
+			<div class="">
+			You can bid for any of the following special treat packages for yourself or your<br>
+			 loved ones |Click on any star, the treat package show up, then place your bid |
+			 </div>
+			 <span style="color: rgb(123, 197, 26);"><h4>Ninja TV Host Celebrities special treats</h4></span>
+			 
+
+			 <div>	
+
+			 {% for i in info %}
+			 
+			<a href="{% url 'catalog:tvhost_details' i.slug %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+			 {% endfor %}		
+			 </div>
+	</div>
+
+	<div class="col-md-8">
+	<div class="well" style="background-color: rgb(123, 197, 26); color: white; font-size:20px;">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+	<b>	Celebrity Treat Bid</b>
+	</div>
+
+
+<<<<<<< HEAD
+    <div class="col-md-6">
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="{{detail2.movie.url}}" name="iframe_a"></iframe>
+    </div>
+<!--<iframe src="{{detail2.movie.url}}" name="iframe_a"></iframe>-->
+
+</div>
+
+	<div class="col-md-6" style="margin-bottom: 30px;">
+		<span style="background-color: rgb(123, 197, 26); color: white; font-size:20px;"><b>|Treat Description |</b></span><br>
+			{{detail2.treat_description}}<br>
+
+			<img src="{{detail2.image.url}}" width="109" height="92"><br>
+			<b>{{detail2.name}}</b>
+
+	</div>
+
+<div class="col-md-12" style="margin-bottom: 20px;">
+        <span style='margin-left: 9px;'>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+        <i class="fa fa-facebook-official"></i>
+        </a>
+        <a href="https://twitter.com/home?status={{share_string}}%20{{ request.build_absolute_uri }}">
+        <i class="fa fa-twitter-square"></i>
+        </a></span><br>
+		<span id="bidstart">Bidding Starts |{{detail2.start}}|</span><br>
+		<span id="bidstart">Bidding Closes   |{{detail2.end}}|</span>
+		<br>
+
+		<h4>Place your Bid</h4>
+		<br>
+		Starting bid is put at <b>[#{{detail2.start_bid}}]</b> Highest Bid so far [# {% for i in total_bid %}
+<b>{{i.new_amount}}</b>
+{% endfor %}]<br>
+
+
+		<br>
+		<br>
+		<div class="">
+
+{{result}}<br>
+=======
+			<div class="col-md-6">
+<video controls width="400" height="260">
+<source src="{{detail2.movie.url}}" type="video/mp4">
+
+</video>
+</div>	
+	
+	<div class="col-md-6"> 
+		<span style="background-color: rgb(123, 197, 26); color: white; font-size:20px;"><b>|Treat Description |</b></span><br>
+			{{detail2.treat_description}}<br>
+			<b>{{detail2.name}}</b> <br>
+			<img src="{{detail2.image.url}}" width="109" height="92">
+
+	</div>
+
+
+
+	<div class="col-md-12">
+		<h4>Bidding Starts |{{detail2.start}}| Bidding Closes   |{{detail2.end}}|</h4>
+		<br>
+		
+		<h2>Place your Bid</h2>
+		<br>
+		Starting bid is put at [N5, 000:00]Highest Bid so far [# {% for i in total_bid %}
+		{{i.amount}}
+		{% endfor %}]<br>
+
+		
+		<br>
+		<br>
+		<div class="col-xs-2">
+
+{{result}}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+<form method="POST">
+	{% csrf_token %}
+	{{form|crispy}}
+<<<<<<< HEAD
+
+	{% if request.user.is_authenticated %}
+	<button type="submit" class="btn btn-primary">{{text}}</button>
+	{% else %}
+	<i style="color: red;">You must login</i> <a href="{% url 'account:login' %}"> Click Here To Login</a>
+	<button type="button" class="btn btn-primary disabled">{{text}}</button>
+	{% endif %}
+</form>
+
+		</div>
+
+
+
+	</div> <!-- End col-sm-8 -->
+</div>
+
+
+</div> <!-- end of class='row' -->
+
+<div class="row">
+
+
+<div class="col-md-8 pull-right" id='mobile_hide' style="margin-bottom: 40px;">
+	<h4>Bid Policy</h4>
+	<ul>
+
+			<li><b>1.</b> To participate for actual bidding you must be 18 years and above.</li>
+			<li><b>2.</b> You can bid to win and give it as a treat to someone special, this include family, friends and loved ones of the appropriate age suitable for the treat package.</li>
+			<li><b>3.</b> 90% of the winning Bid(s) shall be donated to the favorite charity of the Celebrity that donated the treat for this auction</li>
+
+	</ul>
+<br>
+
+		<center><h4>Favourite Charity</h4></center>
+		<div class="col-md-6 col-xs-6">
+			{{detail2.name}} is donating the winning bid for this treat to –{{detail2.charity_name}}
+		</div>
+
+		<div class="col-md-6 ">
+
+			<img src="{{detail2.charity_image.url}}" width="310" height="93">
+		</div>
+=======
+	{% if request.user.is_authenticated %}
+	<button type="submit" class="btn btn-primary">{{text}}</button>
+	{% else %}
+	<i style="color: red;">You must login</i>
+	<button type="button" class="btn btn-primary disabled">{{text}}</button>
+	{% endif %}
+</form>	
+
+		</div>
+		</div>
+
+	
+
+	</div> <!-- End col-sm-8 -->
+
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+</div>
+
+
+<<<<<<< HEAD
+<div class="col-md-8" id='desktop_hide' style="margin-bottom: 40px;">
+	<h4>Bid Policy</h4>
+	<ul>
+
+			<li><b>1.</b> To participate for actual bidding you must be 18 years and above.</li>
+			<li><b>2.</b> You can bid to win and give it as a treat to someone special, this include family, friends and loved ones of the appropriate age suitable for the treat package.</li>
+			<li><b>3.</b> 90% of the winning Bid(s) shall be donated to the favorite charity of the Celebrity that donated the treat for this auction</li>
+
+	</ul>
+<br>
+
+		<center><h4>Favourite Charity</h4></center>
+		<div class="">
+			{{detail2.name}} is donating the winning bid for this treat to –{{detail2.charity_name}}
+		</div>
+
+		<div class="">
+
+			<img src="{{detail2.charity_image.url}}" width="310" height="93">
+		</div>
+
+</div>
+
+
+
+<div class="col-sm-4" id="hide_desktop">
+<h4>Other Business Celebrities</h4>
+		 {% for i in info %}
+
+	<a href="{% url 'catalog:tvhost_details' i.id %}"><img src="{{i.image.url}}" class="img-responsive img-thumbnail" width="109" height="92"></a>
+	 {% endfor %}
+</div>
+</div>
+
+
+
+
+
+</div>
+{% endblock %}
+
+<!-- <div class="container">
+  <h2>Responsive Embed</h2>
+  <p>Create a responsive video and scale it nicely to the parent element with an 16:9 aspect ratio</p>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+</div> -->
+=======
+<div class="row">
+<div class="col-md-8 pull-right">
+	<h1>Bid Policy</h1>
+	<h4><ul>
+
+			<li>To participate for actual bidding you must be 18 years and above.</li>
+			<li>You can bid to win and give it as a treat to someone special, this include family, friends and loved ones of the appropriate age suitable for the treat package.</li>
+			<li>90% of the winning Bid(s) shall be donated to the favorite charity of the Celebrity that donated the treat for this auction</li>
+
+	</ul></h4>
+<br>
+
+		<div class="col-md-6 ">
+			
+			<img src="{{detail2.charity_image.url}}">
+		</div>		
+		<div class="col-md-6 col-xs-6">
+			<h4>{{detail2.name}} is donating the winning bid for this treat to her favorite charity –{{detail2.charity_name}}</h4>
+		</div>
+
+</div>
+</div>
+
+
+</div>
+{% endblock %}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c

@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+
+{% block title %}Logged out{% endblock %}
+{% block body %}
+
+<div class='container'>
+<div class="row">
+<div class="col-md-6 offset-md-3">
+ <h4>Logged out</h4>
+ <p>You have been successfully logged out. You can <a href="{% url 'account:login' %}"><button class="btn btn-primary "> log-in again</button></a></p>
+
+</div>
+</div>
+</div>
+{% endblock body %}
+=======
+
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% block title %}Logged out{% endblock %}
+{% block form %}
+ <h1>Logged out</h1>
+ <p>You have been successfully logged out. You can <a href="{% url 'account:login' %}"><button class="btn btn-primary "> log-in again</button></a></p>
+
+</body>
+</html>
+
+{% endblock form %}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c

@@ -1,0 +1,138 @@
+
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+
+  <div class="card card-body"><b>Comedy Treat </b></div>
+ You can send a comedy treat to your loved ones in any of these upcoming comedy shows  |Click on any, the menu show up, and then start shopping |
+  <br>
+
+{% for i in comedy_event %}
+<a href="{% url 'catalog:comedy_details' i.slug %}" id="hide_mobile">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+</div>
+
+	<div class="col-md-8">
+
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile">Schedule – Booking for Reservation</div><br>
+		<img src="{{detail.image.url}}" width="88px" height="76px" alt="Chania">
+		<span class="">
+      {{detail.name}}</br>
+      Date: {{detail.date}} |Venue: {{detail.venue}} | Time: {{detail.time}}
+
+		</span>
+		<hr>
+		<span style="color: rgb(123, 197, 26);">Price Category (#)</span>
+		<div class="table-responsive">
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row"> 
+<div class="col-md-4">
+   
+  <div class="well"><b>Outdoor Meal Treat </b></div>
+  You can send an outdoor meal treat to your loved ones in any of these<br>
+   fast food & restaurants|Click on any, the menu show up, and then start shopping |
+  <br>
+
+{% for i in comedy_event %}
+<a href="{% url 'catalog:comedy_details' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+</div>  	
+
+	<div class="col-md-8">
+		
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;">Schedule – Booking for Reservation</div><br>
+		<img src="{{detail.image.url}}" width="88px" height="76px" alt="Chania">
+		<span class="">
+      {{detail.name}}</br>
+      Date: {{detail.date}} |Venue: {{detail.venue}} | Time: {{detail.time}} 
+
+		</span>
+		<hr>
+		<span style="color: rgb(227, 108, 10);">Price Category (#)</span>
+		<div class="table-responsive">          
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(123, 197, 26); color: white;">
+      <tr>
+        <th>Singles </th>
+        <th>Double</th>
+        <th>Round Table</th>
+        <th>Vip Table</th>
+      </tr>
+<<<<<<< HEAD
+    </thead>
+=======
+    </thead> 
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+    <tbody>
+      <tr>
+        <td>{{detail.singles_price}} </td>
+        <td>{{detail.double_price}}</td>
+        <td>{{detail.round_table_price}}</td>
+        <td>{{detail.vip_table_price}}</td>
+<<<<<<< HEAD
+
+      </tr>
+
+       <tr>
+
+=======
+    
+      </tr>
+
+       <tr>
+       
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% for i in detail_id %}
+
+
+       <td><a href="{% url 'cart:comedy_singlecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+<<<<<<< HEAD
+
+      <td><a href="{% url 'cart:comedy_doublecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+      <td><a href="{% url 'cart:comedy_round_tablecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+      <td><a href="{% url 'cart:comedy_vip_tablecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+  {% endfor %}
+=======
+     
+      <td><a href="{% url 'cart:comedy_doublecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+      <td><a href="{% url 'cart:comedy_round_tablecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+      <td><a href="{% url 'cart:comedy_vip_tablecart' i.id %}"><button class="btn btn-success">Add to cart</button></a></td>
+  {% endfor %}      
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      </tr>
+
+      </tbody>
+  </table>
+<<<<<<< HEAD
+  <p>For mobile screen, swipe left to view full table.</p>
+=======
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  </div>
+
+
+
+	</div>
+</div>
+</div>
+{% endblock %}

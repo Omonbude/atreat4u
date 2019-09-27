@@ -1,0 +1,216 @@
+<img src="{{logo.image.path}}" alt="image">
+
+
+<h2> {{username}}'s Receipt</h2>
+<div class="" style="float: right;">
+
+{% if cart|length > 0 %}
+My Shopping Order:
+<a href=" style="color: #ffffff">
+{{ totail_items }} item {{ totail_items|pluralize }}, Kshs. {{ cart.get_total_price }}
+</a>
+{% else %}
+
+Total items are {{total_items}}<br>
+
+Total price is {{total_price}}<br>
+
+{% endif %}
+
+</div>
+<br><br>
+
+<div style="padding-buttom:10px;">
+{% if meal_total %}
+ {% for i in meal_total %}
+        <tbody style="padding-bottom: 10px;">
+        <td colspan="2">
+        <h3>
+        <b>Meal:</b> {{i.Menu}}<br>
+        <b>Restaurant:</b> {{i.real_restaurant}} <br>
+        <b>Location:</b> {{i.location}} <br>
+        <b>Brand:</b> {{i.Brand}} <br>
+        <b>Size:</b> {{i.Size}} <br>
+        <b>Quantity:</b> {{i.quantity}} <br>
+        <b>Unit Price:</b> #{{i.price}}<br>
+        <b>Total Price:</b>: #{{i.Total_price}}</td><br>
+        <b>Paid:</b> {{i.paid}} <br>
+        <b>Date Paid:</b> {{i.date}} <br>
+        </h3>
+        </td>
+        </tbody>
+
+{% endfor %}
+{% endif %}
+</div>
+
+
+{% if cinema_total %}
+ {% for i in cinema_total %}
+ <h3>
+        <tbody style="padding-bottom: 10px;">
+        <td colspan="2">
+        <b>MOVIE:</b> {{i.movie}}<br>
+        <b>CINEMA:</b> {{i.cinema_name}} <br>
+        <b>LOCATION:</b> {{i.location}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <b>RATING:</b> {{i.rating}} <br>
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br>
+        </tbody>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+{% if salon_total %}
+ {% for i in salon_total %}
+ <h3>
+        <tbody style="padding-bottom: 10px;">
+        <td colspan="2">
+        <b>STYLE:</b> {{i.style}}<br>
+        <b>SALON:</b> {{i.name}} <br>
+        <b>GENDER:</b> {{i.gender}} <br>
+        <b>PRICE:</b> #{{i.price}}
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br></td>
+        </tbody>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+{% if single_total %}
+ {% for i in single_total %}
+
+        <h3>
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <b>PRICE: </b> {{i.singles_price}}</br>
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br></td>
+        <h3>
+
+{% endfor %}
+{% endif %}
+
+
+
+
+{% if double_total %}
+ {% for i in double_total %}
+<h3>
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <b>PRICE:</b> #{{i.double_price}}<br>
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br></td>
+</h3>
+
+{% endfor %}
+{% endif %}
+
+
+
+
+
+{% if round_total %}
+ {% for i in round_total %}
+ <h3>
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <b>PRICE: </b> #{{i.round_table_price}}</br>
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+
+
+{% if vip_total %}
+ {% for i in vip_total %}
+<h3>
+        <b>COMEDY:</b> {{i.name}}<br>
+        <b>CATEGORY:</b> {{i.category}} <br>
+        <b>VENUE:</b> {{i.venue}} <br>
+        <b>DATE:</b> {{i.date}} <br>
+        <b>PRICE: </B> #{{i.vip_table_price}}<br>
+        <b>PAID:</b> {{i.paid}} <br>
+        <b>DATE PAID:</b> {{i.date}} <br>
+</h3>
+
+{% endfor %}
+{% endif %}
+
+
+{% if celeb %}
+ {% for i in celeb %}
+<h3>
+        <b>CATEGORY :</b>MOVIE CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+         <b>PRICE: </b> #{{i.amount}}<br>
+        <b>PAID: </b> {{i.paid}}<br>
+        <b>DATE PAID</b> {{i.date}}<br>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+{% if music %}
+ {% for i in music %}
+<h3>
+        <b>CATEGORY :</b>MUSIC CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+         <b>PRICE: </b> #{{i.amount}}<br>
+        <b>PAID: </b> {{i.paid}}<br>
+        <b>DATE PAID</b> {{i.date}}<br>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+{% if business %}
+ {% for i in business %}
+<h3>
+        <b>CATEGORY :</b>BUSINESS CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+         <b>PRICE: </b> #{{i.amount}}<br>
+        <b>PAID: </b> {{i.paid}}<br>
+        <b>DATE PAID</b> {{i.date}}<br>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+
+{% if tv %}
+ {% for i in tv %}
+<h3>
+        <b>CATEGORY :</b>TV HOST CELEBRITIES BID<br>
+         <b>NAME OF CELEBRITY:</b> {{i.celeb}}<br>
+         <b>PRICE: </b> #{{i.amount}}<br>
+        <b>PAID: </b> {{i.paid}}<br>
+        <b>DATE PAID</b> {{i.date}}<br>
+</h3>
+{% endfor %}
+{% endif %}
+
+
+
+
+
+

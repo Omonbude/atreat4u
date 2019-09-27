@@ -1,0 +1,79 @@
+<<<<<<< HEAD
+
+<!-- 1 -->
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+<style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+
+<div class="container">
+<div class="row">
+
+  <div class="col-md-4 col-sm-hidden col-xs-hidden">
+   
+  <div class="card card-body col-sm-hidden col-xs-hidden"><b>Comedy Treat  </b></div>
+  <h5>You can send a comedy treat to your loved ones in any of these upcoming comedy shows  |Click on any, the menu show up, and then start shopping |</h5>
+  <br>
+  {% for i in comedy_event %}
+  <a href="{% url 'catalog:comedy_details' i.slug %}">
+  <img src="{{i.image.url}}" width="88px" height="76px">
+  </a>
+{% endfor %}
+</div>
+
+
+  <div class="col-md-8">
+    
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile">Schedule – Booking for Reservation</div><br>
+
+    <hr>
+    
+<h3><span class="label label-default" id="hide_mobile">Select A Comedy treat</span></h3>
+
+
+  </div>
+</div>
+</div>
+=======
+
+<!-- 1 -->
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+<div class="container-fluid">
+<div class="row">
+
+  <div class="col-md-4 col-sm-hidden col-xs-hidden">
+   
+  <div class="well col-sm-hidden col-xs-hidden"><b>Comedy Treat  </b></div>
+  <h5>You can send a comedy treat to your loved ones in any of these upcoming comedy shows  |Click on any, the menu show up, and then start shopping |</h5>
+  <br>
+  {% for i in comedy_event %}
+  <a href="{% url 'catalog:comedy_details' i.slug %}">
+  <img src="{{i.image.url}}" width="88px" height="76px">
+  </a>
+{% endfor %}
+</div>
+
+
+  <div class="col-md-8">
+    
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;">Schedule – Booking for Reservation</div><br>
+
+    <hr>
+    
+<h3><span class="label label-default">Select A Comedy treat</span></h3>
+
+
+  </div>
+</div>
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}

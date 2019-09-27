@@ -1,0 +1,165 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+ <style>
+    @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #hide_mobile{
+        display:none;
+    }
+    }
+</style>
+
+
+<div class="container" >
+<div class="row">
+	<div class="col-md-4">
+  <div class="card card-body"><b>Movie Treat </b></div>
+=======
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+
+<div class="container-fluid" >
+<div class="row">
+	<div class="col-md-4">
+  <div class="well"><b>Movie Treat </b></div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+	You can send an outdoor Movie treat to your loved ones in any of these Cinemas |Click on any, the Schedule shows up, and then start booking |
+	<br>
+
+{% for i in cinema_name %}
+<<<<<<< HEAD
+<a href="{% url 'catalog:cinemas_details' i.slug %}" id="hide_mobile">
+<img src="{{i.image.url}}">
+</a>
+{% endfor %}
+	</div>
+
+	<div class="col-md-8">
+  <div class="card card-body" style="background-color: rgb(123, 197, 26); color: white;" id="hide_mobile"><b>Schedule – Booking for Reservation</b></div>
+		<h2>{{detail.name}}</h2>
+	<img src="{{detail.image.url}}" alt="Chania"><br>
+
+
+  <form action="{% url 'catalog:cinema_location' %}" method="post" name="">{% csrf_token %}
+  Location: <select name="dropdown1">
+    {% for i in location %}
+
+
+   <option> {{i.address}}</option>
+
+
+    {% endfor %}
+  </select> <br>
+  <button class="btn btn-primary">Go</button>
+    </form>
+=======
+<a href="{% url 'catalog:cinemas_details' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+	</div>	
+
+	<div class="col-md-8">
+  <div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Schedule – Booking for Reservation</b></div>
+		<h2>{{detail.name}}</h2>
+	<img src="{{detail.image.url}}" alt="Chania" width="88px" height="76px">
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+		<!-- <span class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Location
+		  <span class="caret"></span></button>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">HTML</a></li>
+		    <li><a href="#">CSS</a></li>
+		    <li><a href="#">JavaScript</a></li>
+		  </ul>
+		</span> -->
+		<hr>
+<!-- 		Movie Schedule and Price list for Silverbird Cinema / Location Victoria Island Lagos -->
+
+<<<<<<< HEAD
+
+
+
+<!--     <div class="table-responsive">
+=======
+    <div class="table-responsive">          
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(103, 197, 100); color: white;">
+      <tr>
+        <th>Movie</th>
+        <th>Rating</th>
+        <th>Price</th>
+        <th>Date|time</th>
+        <th>Seat Reservation</th>
+<<<<<<< HEAD
+
+=======
+<!--         <th>cart</th> -->
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+      </tr>
+    </thead>
+    <tbody>
+
+{% for i in movie %}
+      <tr>
+<<<<<<< HEAD
+        <td><img src="{{i.image.url}}" alt="Chania"><br> {{i.movie}}</td>
+
+=======
+        <td><img src="{{i.image.url}}" alt="Chania" width="88px" height="76px"><br> {{i.movie}}</td>
+        
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td>{{i.rating}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.slug}} | {{i.time}}</td>
+
+        <td><a href="{% url 'cart:cinema_cart' i.pk %}"><button class="btn btn-primary">Add to Cart</button></a></td>
+      </tr>
+
+<<<<<<< HEAD
+{% endfor %} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <tr>
+        <td><img src="{% static 'img/cinema7.jpg' %}" alt="Chania"> <br> Sing</td>
+
+=======
+{% endfor %}
+
+<!--        <tr>
+        <td><img src="{% static 'img/cinema7.jpg' %}" alt="Chania"> <br> Sing</td>
+        
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+        <td>Kid</td>
+        <td>800</td>
+        <td>Saturday, 4pm</td>
+        <td>4</td>
+        <td><button class="btn btn-primary">cart</button></td>
+      </tr> -->
+
+   </tbody>
+  </table>
+  </div>
+
+
+	</div>
+</div>
+</div>
+{% endblock %}

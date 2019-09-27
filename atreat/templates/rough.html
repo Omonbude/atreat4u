@@ -1,0 +1,74 @@
+<<<<<<< HEAD
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+
+
+
+
+
+
+</body>
+</html>
+
+{{text2}}
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+=======
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+
+
+
+
+
+
+</body>
+</html>
+
+{{text2}}
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+
+
+	<button type="submit" class="btn btn-primary ">{{text}}</button>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+</form>	

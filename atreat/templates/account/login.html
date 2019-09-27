@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class='container'>
+<div class="row">
+<div class="col-md-6 offset-md-3">
+
+=======
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block form %}
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+<h2>Login</h2>
+<form method="post">
+	{% csrf_token %}
+	{{form|crispy}}
+
+
+<<<<<<< HEAD
+	<button type="submit" class="btn btn-primary ">Login</button>
+</form>
+</div>
+</div>
+</div>
+=======
+	<button type="submit" class="btn btn-primary ">Login</button> 
+</form>	
+
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+{% for i in meal_total %}
+{{i.paid}}
+{% endfor %}
+{% endblock %}

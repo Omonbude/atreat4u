@@ -1,0 +1,197 @@
+<<<<<<< HEAD
+<!-- 2 -->
+
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<style>
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+#menu{
+  display: none;
+}
+}
+</style>
+
+
+
+<div class="container">
+<div class="row"> 
+	<div class="col-md-4"> 
+	 
+	<div class="card card-body"><b>Outdoor Meal Treat </b></div>
+	You can send an outdoor meal treat to your loved ones in any of these<br>
+	 fast food & restaurants|Click on any, the menu show up, and then start shopping |
+	<hr>
+
+  {% for i in restaurant_name %}
+<a href="{% url 'catalog:meal_restaurant' i.id %}" id="menu">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+</div>	
+
+	<div class="col-md-8">
+	<div class="card card-body" id="menu" style="background-color: rgb(123, 197, 26); color: white;"><b>Menu – Shopping for your treat package</b></div>
+
+
+<form action="{% url 'catalog:location' %}" method="POST">{% csrf_token %}
+
+<table>
+  <tr>
+
+    <td><img src="{{restaurant.image.url}}" width="88px" height="76px"></td>
+    <td>
+    {% for restaurant in restaurant_loop %}
+      <select name='dropdown1' style="width: 150px;">
+      
+      
+      <option>Select a location</option>
+      {% for i in restaurant_location %}
+        <option>{{i.address}}</option>
+      {% endfor %}
+      
+      </select>
+      {% endfor %}
+    </td>
+    <td><input type="submit" value="Go"></td>
+  </tr>
+</table>
+  
+</form>
+
+
+
+
+
+
+		  
+		
+
+
+		<hr>
+
+    <h3><span class="label label-default" id="menu">Select A Location</span></h3>
+
+
+
+
+
+<!--   <div class="table-responsive">          
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(253, 233, 217); color: rgb(227, 108, 10);">
+      <tr>
+        <th>Menu</th>
+        <th>Brand</th>
+        <th>Size</th>
+        <th>Qty |Unit |Plate</th>
+        <th>Amount (N)</th>
+        <th>Add to cart ></th>
+      </tr>
+    </thead>
+    <tbody>
+   
+  </table>
+
+  
+  </div> -->
+
+
+
+	</div>
+</div>
+</div>
+=======
+<!-- 2 -->
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meal %}
+
+<div class="container-fluid">
+<div class="row"> 
+	<div class="col-md-4"> 
+	 
+	<div class="well"><b>Outdoor Meal Treat </b></div>
+	You can send an outdoor meal treat to your loved ones in any of these<br>
+	 fast food & restaurants|Click on any, the menu show up, and then start shopping |
+	<br>
+
+  {% for i in restaurant_name %}
+<a href="{% url 'catalog:meal_restaurant' i.slug %}">
+<img src="{{i.image.url}}" width="88px" height="76px">
+</a>
+{% endfor %}
+</div>	
+
+	<div class="col-md-8">
+	<div class="well" style="background-color: rgb(123, 197, 26); color: white;"><b>Menu – Shopping for your treat package</b></div>
+
+
+<form action="{% url 'catalog:location' %}" method="POST">{% csrf_token %}
+
+<table>
+  <tr>
+
+    <td><img src="{{restaurant.image.url}}" width="88px" height="76px"></td>
+    <td>
+    {% for restaurant in restaurant_loop %}
+      <select name='dropdown1'>
+      
+      {% for i in restaurant_location %}
+        <option>{{i.address}}</option>
+      {% endfor %}
+      
+      </select>
+      {% endfor %}
+    </td>
+    <td><input type="submit" value="Go"></td>
+  </tr>
+</table>
+  
+</form>
+
+
+
+
+
+
+		  
+		
+
+
+		<hr>
+
+    <h3><span class="label label-default">Select A Location</span></h3>
+
+
+
+
+
+<!--   <div class="table-responsive">          
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(253, 233, 217); color: rgb(227, 108, 10);">
+      <tr>
+        <th>Menu</th>
+        <th>Brand</th>
+        <th>Size</th>
+        <th>Qty |Unit |Plate</th>
+        <th>Amount (N)</th>
+        <th>Add to cart ></th>
+      </tr>
+    </thead>
+    <tbody>
+   
+  </table>
+
+  
+  </div> -->
+
+
+
+	</div>
+</div>
+</div>
+>>>>>>> 714da70c489406f200282bb4a66b5e38148dfd8c
+{% endblock %}
